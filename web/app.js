@@ -1,3 +1,9 @@
+if (!localStorage.getItem("cvault_profile") && window.chrome?.runtime) {
+  try {
+    chrome.runtime.sendMessage({ type: "REQUEST_CVAULT_PROFILE" });
+  } catch {}
+}
+
 const raw = localStorage.getItem("cvault_profile");
 let data = {};
 let photoBase64 = "";
