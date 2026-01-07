@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+body { font-family: Inter, Arial, sans-serif; }
+.cv { display: flex; gap: 30px; }
+.sidebar {
+  width: 200px;
+  text-align: center;
+}
+.sidebar img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.main {
+  flex: 1;
+}
+h1 { margin-bottom: 5px; }
+h2 {
+  border-bottom: 2px solid #0a66c2;
+  margin-top: 25px;
+}
+.skills span {
+  display: inline-block;
+  border: 1px solid #ccc;
+  padding: 5px 8px;
+  margin: 4px;
+  border-radius: 4px;
+}
+</style>
+</head>
+
+<body>
+<div class="cv">
+
+{{PHOTO_BLOCK}}
+<div class="sidebar">
+  <img src="{{PHOTO}}">
+</div>
+{{/PHOTO_BLOCK}}
+
+<div class="main">
+<h1>{{NAME}}</h1>
+<p>{{HEADLINE}} · {{LOCATION}}</p>
+
+<h2>Summary</h2>
+<p>{{SUMMARY}}</p>
+
+<h2>Experience</h2>
+{{EXPERIENCE}}
+
+<h2>Education</h2>
+{{EDUCATION}}
+
+<h2>Skills</h2>
+<div class="skills">{{SKILLS}}</div>
+
+</div>
+</div>
+</body>
+</html>
