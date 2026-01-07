@@ -7,14 +7,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.min.js"></script>
 </head>
-<script>
-  window.addEventListener("message", (event) => {
-    if (event.data?.type === "CVAULT_PROFILE") {
-      localStorage.setItem("cvault_profile", event.data.payload);
-      console.log("CVault profile imported");
-    }
-  });
-</script>
 
 <body>
 <header>
@@ -52,5 +44,13 @@
 </section>
 
 <script src="app.js"></script>
+<script>
+  window.addEventListener("message", (event) => {
+    if (event.data?.type === "CVAULT_PROFILE") {
+      localStorage.setItem("cvault_profile", event.data.payload);
+      console.log("CVault profile imported");
+    }
+  });
+</script>
 </body>
 </html>
