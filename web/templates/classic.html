@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+body { font-family: "Times New Roman", serif; }
+.cv { width: 800px; margin: auto; }
+.header { text-align: center; }
+.photo img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+h2 {
+  border-bottom: 1px solid black;
+  margin-top: 25px;
+}
+</style>
+</head>
+
+<body>
+<div class="cv">
+
+<div class="header">
+{{PHOTO_BLOCK}}
+<div class="photo">
+  <img src="{{PHOTO}}">
+</div>
+{{/PHOTO_BLOCK}}
+
+<h1>{{NAME}}</h1>
+<p>{{HEADLINE}} · {{LOCATION}}</p>
+</div>
+
+<h2>Profile</h2>
+<p>{{SUMMARY}}</p>
+
+<h2>Professional Experience</h2>
+{{EXPERIENCE}}
+
+<h2>Education</h2>
+{{EDUCATION}}
+
+<h2>Skills</h2>
+<p>{{SKILLS}}</p>
+
+</div>
+</body>
+</html>
