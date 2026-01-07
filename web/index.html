@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CVault</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.min.js"></script>
+</head>
+
+<body>
+<header>
+  <h1>CVault</h1>
+  <p>Transform your LinkedIn profile into a complete CV.</p>
+</header>
+
+<section class="panel">
+  <h2>1. Analyze LinkedIn Profile</h2>
+  <input id="apiKey" type="password" placeholder="Groq API Key (required)">
+  <button onclick="analyze()">Analyze Profile</button>
+</section>
+
+<section id="editor" class="panel hidden">
+  <h2>2. Edit & Select Content</h2>
+  <div id="content"></div>
+
+  <label>Upload CV Photo</label>
+  <input type="file" id="photo" accept="image/*">
+
+  <label>Template</label>
+  <select id="template">
+    <option value="modern">Modern</option>
+    <option value="classic">Classic</option>
+  </select>
+
+  <button onclick="buildCV()">Preview CV</button>
+</section>
+
+<section id="preview" class="panel hidden">
+  <h2>3. Preview</h2>
+  <div id="cv"></div>
+  <button onclick="exportPDF()">Export PDF</button>
+  <button onclick="exportDOCX()">Export DOCX</button>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
